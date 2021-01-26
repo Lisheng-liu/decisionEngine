@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25f8bbde-6d00-41ef-9a09-b7b68017af41" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="/usr/maven/repo" />
+        <option name="mavenHome" value="/usr/maven/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="/usr/maven/apache-maven-3.6.1/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1naapDBLv56x5J5DuAoIDYrywwM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25f8bbde-6d00-41ef-9a09-b7b68017af41" name="Default Changelist" comment="" />
+      <created>1611630835540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611630835540</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="234" key="GridCell.Tab.0.bottom" timestamp="1611683656376">
+      <screen x="65" y="24" width="1375" height="876" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.0.bottom/65.24.1375.876@65.24.1375.876" timestamp="1611683656376" />
+    <state width="1323" height="234" key="GridCell.Tab.0.center" timestamp="1611683656376">
+      <screen x="65" y="24" width="1375" height="876" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.0.center/65.24.1375.876@65.24.1375.876" timestamp="1611683656376" />
+    <state width="1323" height="234" key="GridCell.Tab.0.left" timestamp="1611683656376">
+      <screen x="65" y="24" width="1375" height="876" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.0.left/65.24.1375.876@65.24.1375.876" timestamp="1611683656376" />
+    <state width="1323" height="234" key="GridCell.Tab.0.right" timestamp="1611683656376">
+      <screen x="65" y="24" width="1375" height="876" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.0.right/65.24.1375.876@65.24.1375.876" timestamp="1611683656376" />
+    <state x="65" y="91" key="new project wizard" timestamp="1611683718091">
+      <screen x="65" y="24" width="1375" height="876" />
+    </state>
+    <state x="65" y="91" key="new project wizard/65.24.1375.876@65.24.1375.876" timestamp="1611683718091" />
+  </component>
+</project>
