@@ -4,29 +4,24 @@ import com.re.dm.DataModel;
 import com.re.dm.MetaMap;
 import com.re.dm.VarType;
 import com.re.dm.Variable;
-import com.re.dm.vo.VariableVo;
 import com.re.util.DroolUtil;
 import com.re.util.DroolsRuleLog;
 import com.re.util.ExecuteVo;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.xml.crypto.Data;
 import java.util.*;
 
 /*@RunWith(SpringRunner.class)
 @SpringBootTest*/
-public class DroolTest_RuleSet0001 {
+public class DroolTest_PolicyRuleSet0001 {
 
     @Test
-    public void testRuleSet0001_1(){
+    public void testPolicyRuleSet0001_1(){
         String custAge = "1";
         String cashStrgyRslt = "";
         String expect_cashStrgyRslt = "t01";
-        String agendaGroup = "ruleSet_1_v1.00";
-        String drlPath = "src/test/resources/rule/ruleSet_001.drl";
+        String agendaGroup = "policyRuleSet_1_v1.00";
+        String drlPath = "src/test/resources/rule/policyRuleSet_001.drl";
         Map<String, Object> dataMap = getDataMap(custAge,cashStrgyRslt);
         Optional<DroolsRuleLog> droolsRuleLog = DroolUtil.executeDrl(dataMap,getMetaMap(),drlPath,null,agendaGroup);
         System.out.println(droolsRuleLog.get());
@@ -35,12 +30,12 @@ public class DroolTest_RuleSet0001 {
         assert executeVos.size()>0 && executeVos.get(0).getValue().equals(expect_cashStrgyRslt);
     }
     @Test
-    public void testRuleSet0001_2(){
+    public void testPolicyRuleSet0001_2(){
         String custAge = "3";
         String cashStrgyRslt = "";
         String expect_cashStrgyRslt = "t02";
-        String agendaGroup = "ruleSet_1_v1.00";
-        String drlPath = "src/test/resources/rule/ruleSet_001.drl";
+        String agendaGroup = "policyRuleSet_1_v1.00";
+        String drlPath = "src/test/resources/rule/policyRuleSet_001.drl";
         Map<String, Object> dataMap = getDataMap(custAge,cashStrgyRslt);
         Optional<DroolsRuleLog> droolsRuleLog = DroolUtil.executeDrl(dataMap,getMetaMap(),drlPath,null,agendaGroup);
         System.out.println(droolsRuleLog.get());
@@ -50,12 +45,12 @@ public class DroolTest_RuleSet0001 {
     }
 
     @Test
-    public void testRuleSet0001_3(){
+    public void testPolicyRuleSet0001_3(){
         String custAge = "6";
         String cashStrgyRslt = "";
         String expect_cashStrgyRslt = "t03";
-        String agendaGroup = "ruleSet_1_v1.00";
-        String drlPath = "src/test/resources/rule/ruleSet_001.drl";
+        String agendaGroup = "policyRuleSet_1_v1.00";
+        String drlPath = "src/test/resources/rule/policyRuleSet_001.drl";
         Map<String, Object> dataMap = getDataMap(custAge,cashStrgyRslt);
         Optional<DroolsRuleLog> droolsRuleLog = DroolUtil.executeDrl(dataMap,getMetaMap(),drlPath,null,agendaGroup);
         System.out.println(droolsRuleLog.get());
@@ -65,18 +60,18 @@ public class DroolTest_RuleSet0001 {
     }
 
     @Test
-    public void testRuleSet0001_4(){
+    public void testPolicyRuleSet0001_4(){
         String custAge = "16";
         String cashStrgyRslt = "";
-        String expect_cashStrgyRslt = "t03";
-        String agendaGroup = "ruleSet_1_v1.00";
-        String drlPath = "src/test/resources/rule/ruleSet_001.drl";
+        String expect_cashStrgyRslt = "t04";
+        String agendaGroup = "policyRuleSet_1_v1.00";
+        String drlPath = "src/test/resources/rule/policyRuleSet_001.drl";
         Map<String, Object> dataMap = getDataMap(custAge,cashStrgyRslt);
         Optional<DroolsRuleLog> droolsRuleLog = DroolUtil.executeDrl(dataMap,getMetaMap(),drlPath,null,agendaGroup);
         System.out.println(droolsRuleLog.get());
-        assert droolsRuleLog.get().getHitCount() == 1;
-        List<ExecuteVo> executeVos = (List<ExecuteVo>) droolsRuleLog.get().getLogs().get(0).get("rhs");
-        assert executeVos.size()>0 && executeVos.get(0).getValue().equals(expect_cashStrgyRslt);
+        assert droolsRuleLog.get().getHitCount() == 2;
+        List<ExecuteVo> executeVos = (List<ExecuteVo>) droolsRuleLog.get().getLogs().get(1).get("rhs");
+        assert executeVos.size()>0 && executeVos.get(1).getValue().equals(expect_cashStrgyRslt);
     }
 
     public MetaMap getMetaMap(){

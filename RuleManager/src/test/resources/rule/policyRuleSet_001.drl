@@ -1,4 +1,4 @@
-package com.re.ruleSet
+package com.re.policyRuleSet
 import java.util.*;
 import com.re.util.*;
 global RuleHelper ruleHelper;
@@ -6,15 +6,16 @@ global DroolsRuleLog droolsRuleLog;
 global com.re.dm.MetaMap metaMap;
 global java.util.Map dataMap;
 dialect "mvel"
+ruleflow-group "policyRuleSet_1_v1.00"
 
 
 // ruleflow-group 与agendaGroup 效果等同
-//规则集：同一个drl 为一个 activation-group，按优先级排序执行一个满足条件的规则后后退出
+//政策规则集：同一个drl 不同activation-group，按优先级排序所有满足条件的都可执行
 
 
-ruleflow-group "ruleSet_1_v1.00"
-rule "ruleSet_1_v1.00_test001"
-activation-group "ruleSet_1_v1.00"
+
+rule "policyRuleSet_1_v1.00_test001"
+activation-group "policyRuleSet_1_v1.00_1"
 salience 9999000
 enabled true
 when
@@ -24,11 +25,11 @@ when
     )
  then
      ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t01") ;
-     droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test001",drools);
+     droolsRuleLog.addLogs("policyRuleSet","policyRuleSet_1_v1.00_test001",drools);
  end
 
-rule "ruleSet_1_v1.00_test002"
-activation-group "ruleSet_1_v1.00"
+rule "policyRuleSet_1_v1.00_test002"
+activation-group "policyRuleSet_1_v1.00_2"
 salience 999800
 enabled true
 when
@@ -38,11 +39,11 @@ when
     )
  then
      ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t02") ;
-      droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test002",drools);
+      droolsRuleLog.addLogs("policyRuleSet","policyRuleSet_1_v1.00_test002",drools);
  end
 
-rule "ruleSet_1_v1.00_test003"
-activation-group "ruleSet_1_v1.00"
+rule "policyRuleSet_1_v1.00_test003"
+activation-group "policyRuleSet_1_v1.00_3"
 salience 9997000
 enabled true
 when
@@ -52,11 +53,11 @@ when
     )
  then
      ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t03") ;
-       droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test003",drools);
+       droolsRuleLog.addLogs("policyRuleSet","policyRuleSet_1_v1.00_test003",drools);
  end
 
- rule "ruleSet_1_v1.00_test004"
- activation-group "ruleSet_1_v1.00"
+ rule "policyRuleSet_1_v1.00_test004"
+ activation-group "policyRuleSet_1_v1.00_4"
  salience 9996000
  enabled true
  when
@@ -66,7 +67,7 @@ when
      )
   then
       ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t04") ;
-        droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test003",drools);
+      droolsRuleLog.addLogs("policyRuleSet","policyRuleSet_1_v1.00_test004",drools);
   end
 
 rule updateInsertMap_uuid232

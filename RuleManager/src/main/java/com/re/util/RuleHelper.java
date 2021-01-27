@@ -60,7 +60,7 @@ public class RuleHelper {
         VariableVo variableVo = this.metaMap.getMetaMap().get(varNames[0]).get(varNames[1]);
         Object targetValue = transromeValue(variableVo.getVarType(),value);
         Map<String,Object> childMap = (Map<String, Object>) map.get(varNames[0]);
-        childMap.put(varNames[1],value);
+        childMap.put(varNames[1],targetValue);
 
     }
 
@@ -104,6 +104,8 @@ public class RuleHelper {
         Map<String,Object> childMap = (Map<String, Object>) map.get(varNames[0]);
         Object value = childMap.get(varNames[1]);
         this.conditionMap.put(path,String.valueOf(value));
-        return value;
+        VariableVo variableVo = this.metaMap.getMetaMap().get(varNames[0]).get(varNames[1]);
+        Object targetValue = transromeValue(variableVo.getVarType(),value);
+        return targetValue;
     }
 }
