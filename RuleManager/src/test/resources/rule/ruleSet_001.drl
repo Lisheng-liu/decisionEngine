@@ -1,0 +1,59 @@
+package com.re.ruleSet
+import java.util.*;
+import com.re.util.*;
+global RuleHelper ruleHelper;
+global DroolsRuleLog droolsRuleLog;
+global com.re.dm.MetaMap metaMap;
+global java.util.Map dataMap;
+dialect "mvel"
+ruleflow-group "ruleSet_1_v1.00"
+rule "ruleSet_1_v1.00_test001"
+activation-group "ruleSet_1_v1.00"
+salience 9999000
+enabled true
+when
+    $insertMap : Map()
+    Map(
+    ruleHelper.getValue($insertMap,"input_keys.cust_age") <= 2
+    )
+ then
+     ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t01") ;
+     droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test001",drools);
+ end
+
+rule "ruleSet_1_v1.00_test002"
+activation-group "ruleSet_1_v1.00"
+salience 999800
+enabled true
+when
+    $insertMap : Map()
+    Map(
+    ruleHelper.getValue($insertMap,"input_keys.cust_age") > 2 &&  ruleHelper.getValue($insertMap,"input_keys.cust_age") < 5
+    )
+ then
+     ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t02") ;
+      droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test002",drools);
+ end
+
+rule "ruleSet_1_v1.00_test003"
+activation-group "ruleSet_1_v1.00"
+salience 9997000
+enabled true
+when
+    $insertMap : Map()
+    Map(
+    ruleHelper.getValue($insertMap,"input_keys.cust_age") >=5
+    )
+ then
+     ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt","t03") ;
+       droolsRuleLog.addLogs("ruleSet","ruleSet_1_v1.00_test003",drools);
+ end
+
+rule updateInsertMap_uuid232
+salience 2100000000
+no-loop true
+when
+  $insertMap:Map()
+then
+   update($insertMap);
+end

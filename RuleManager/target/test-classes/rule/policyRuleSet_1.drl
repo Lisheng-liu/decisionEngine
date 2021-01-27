@@ -1,0 +1,19 @@
+package com.re.ploicyRuleSet
+import java.util.*;
+import com.re.util.*;
+global RuleHelper ruleHelper;
+global DroolsRuleLog droolsRuleLog;
+global java.util.Map metaMap;
+global java.util.Map dataMap;
+dialect "mvel"
+ruleflow-group "policyRuleSet_1_v1.00"
+rule "policyRuleSet_1_v1.00_test001"
+salience 9999000
+enable true
+when
+    $insertMap : Map()
+    Map(
+    ruleHelper.getValue($insertMap,"input_keys.cust_age") > 2 &&  ruleHelper.getValue($insertMap,"input_keys.cust_age") < 5
+    )
+ then
+     ruleHelper.setValue($insertMap,"output_keys.cash_strgy_rslt") = "t";
